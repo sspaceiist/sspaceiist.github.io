@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Template"
+title: "Propulsion"
 categories: induction
 author:
 - Auth 1
