@@ -1,17 +1,19 @@
 ---
 layout: post
-title: "Template"
+title: "Structures"
 categories: induction
 author:
 - Auth 1
 - Auth 2
 ---
 
+# Structures
+
 [PDF link](https://drive.google.com/file/d/1zvlHo8aX637TwcfnUJRWnP-jHJfKNHI9/view?usp=drive_link)
 
 ![](Aspose.Words.036c8705-50d4-4043-a82a-6758a33d5015.001.png)![](Aspose.Words.036c8705-50d4-4043-a82a-6758a33d5015.002.png)
 
-`     `As for all space missions, including cubesats, the structure is one of the main satellite subsystems. In principle, the purpose of the structural subsystem is to provide a simple and robust structure that shall survive launch loads and provide a suitable environment for the operation of all subsystems.  
+As for all space missions, including cubesats, the structure is one of the main satellite subsystems. In principle, the purpose of the structural subsystem is to provide a simple and robust structure that shall survive launch loads and provide a suitable environment for the operation of all subsystems.  
 
 Furthermore, the structure mechanically supports all other spacecraft subsystems, attaches the spacecraft to the launch vehicle, and provides for ordnance-activated separation. Generally, structural design shall aim for simple load paths, simplified interfaces, and easy integration.  
 
