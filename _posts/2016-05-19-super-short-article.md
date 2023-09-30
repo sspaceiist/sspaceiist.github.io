@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Some articles are just so short that we have to make the footer stick"
-categories: misc
+title: "CDH"
+categories: induction
 ---
 
 Command And Data Handling Documentation
