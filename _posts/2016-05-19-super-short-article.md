@@ -4,4 +4,100 @@ title: "Some articles are just so short that we have to make the footer stick"
 categories: misc
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Command And Data Handling Documentation
+
+Table of Content
+
+1. [Introduction](#_page0_x36.00_y193.43)
+1. [Type of Data](#_page0_x36.00_y296.77)
+1. [Components of CDH](#_page0_x36.00_y516.49)
+1. [Flow of Data](#_page1_x36.00_y0.00)
+1. [Data Budget](#_page1_x36.00_y459.92)
+1. [Design of the OBC](#_page2_x36.00_y0.00)
+1. [Conclusion](#_page2_x36.00_y330.93)
+
+<a name="_page0_x36.00_y193.43"></a>Introduction:
+
+The Command and Data Handling subsystem is responsible for receiving commands from ground control, controlling the spacecraft's operations, collecting data from various sensors and instruments on board, processing and storing the data, and transmitting the collected data back to ground control.
+
+<a name="_page0_x36.00_y296.77"></a>Type of Data
+
+1. Command Data(Uplink) – Data sent from ground stations to satellites in order to control the satellite system. A single command is usually arranged as a relatively small data packet.
+1. Telemetry Data(Downlink):- Data delivered from the satellite to ground stations is known as telemetry data.
+1. Housekeeping (HK) Data: Basic status details for satellite parts to track the satellite's housekeeping condition. During contact, HK data is often periodically and continuously transmitted to the ground stations(This periodical signal is also known as a beacon).
+1. Mission Data(Science Data): Information obtained from the mission instruments, such as pictures taken of the Earth, information gathered from environmental sensors, communication signals, etc. Typically, a lengthy communication duration and/or high-speed connections are needed due to the size of the mission data.
+
+<a name="_page0_x36.00_y516.49"></a>Components of CDH
+
+CDH has basically two types of components some are related to on-board Computer(OBC) and others are related to Flight Software(FSW). Some of them are as follows:
+
+1. Hardware Components of CDH:
+   1. on-board computer (OBC): The OBC is the main processing unit of the satellite. It is responsible for executing commands, processing data, and controlling other subsystems.
+   1. Memory: Volatile memory is used for temporary storage of data and program instructions, while non-volatile memory (such as flash memory) is used for long-term storage of data and software
+   1. Bus communication: CubeSat CDH utilizes various bus communication protocols such as I2C (Inter-Integrated Circuit), UART (Universal Asynchronous Receiver-Transmitter), and SPI (Serial Peripheral Interface) to enable communication between the OBC and other subsystems.
+1. Software Components of Flight Software
+1. Flight Software
+1. Drivers for the peripherals like SPI, I2C, and UART
+
+<a name="_page1_x36.00_y0.00"></a>Flow Of Data:
+
+The CDH subsystem facilitates the flow of data between the different subsystems of the CubeSat as follows.
+
+1. CDH takes Commands from the Ground Station via the Communication subsystem.
+
+(Commands and data are typically transmitted through the bus communication protocols.)
+
+2. CDH takes Sensor data, telemetry data, and ground commands are processed by the OBC and distributed to the appropriate subsystems as required.
+2. CDH takes account of power distribution like turning on and off other components of the satellite. Or changes to be taken autonomously in low voltage condition
+
+Here is a graphical representation of the data flow (credits:- Tohoku University, Japan)
+
+![](Aspose.Words.c918ae47-991b-4809-9d7a-349487529ab8.001.jpeg)
+
+Here as we can see
+
+1. The blue line coming from COMMS to CDH represents the command received from the Ground Station as Uplink
+1. Blue lines going from OBC to ADCS, Payload control, and Power subsystem(EPS) represent commands given to these subsystems according to logic or algorithm defined in Flight Software
+1. Red lines coming from these subsystems represent data from these subsystems
+1. Finally, that data is sent to the ground station via the COMMS subsystem as a Downlink.
+1. Some additional algorithms are also defined in Flight software to run in case of anomaly or low power conditions.
+
+<a name="_page1_x36.00_y459.92"></a>Data Budget
+
+- The data budget is typically defined based on factors such as the available memory and processing power of the OBC, as well as the mission constraints and requirements. It is important to carefully analyze the data needs of the mission and allocate resources accordingly to ensure that the CDH subsystem can efficiently handle the data generated by various subsystems.
+- The data budget includes both the storage capacity and processing capability of the OBC. The storage capacity defines the maximum amount of data that can be stored onboard the satellite at any given time. This includes not only scientific data but also telemetry, command logs, and other system-related data.
+- On the processing side, the data budget considers the OBC's capability to execute algorithms and perform computations on the collected data. This includes analysis required by the mission. It is important to consider the computational constraints of the OBC .
+- Regular monitoring and analysis of the data budget during the mission are necessary to prevent data overflows or exceed processing capabilities. This includes tracking the data storage levels, and system performance, and making adjustments if necessary. A well-managed data budget ensures the success of the mission by optimizing the use of limited resources and ensuring the efficient functioning of the CDH subsystem.
+
+<a name="_page2_x36.00_y0.00"></a>Design of the OBC:
+
+Processor Selection
+
+Choosing the right processor for the CDH subsystem is crucial. Factors that influence the selection include
+
+- processing power,
+- memory capacity
+- power consumption
+- reliability.
+
+The processor should be capable of handling the computational requirements of the satellite while operating within the constraints of the CubeSat platform.
+
+Selection of Interfaces and Buses
+
+Depending on the quantity and nature of our payloads and sensors, we need to allocate particular functions to pins on our processor. To accomplish this, we can utilize established peripheral options such as SPI, I2C, and UART, and tailor their configurations to meet the specific needs of our payloads and sensors
+
+[comparison between I2c, SPI and UART](https://www.seeedstudio.com/blog/2019/09/25/uart-vs-i2c-vs-spi-communication-protocols-and-uses/)
+
+Note: Given that other subsystems will share the same bus, it's imperative to plan the assignment of functions to each pin carefully, taking into account the requirements of all other subsystems. Therefore, the design of the Onboard Computer (OBC) is a crucial aspect of the system engineering process.
+
+<a name="_page2_x36.00_y330.93"></a>Conclusion
+
+In conclusion, the CDH subsystem in CubeSat plays a critical role in managing and coordinating the flow of commands and data within the satellite. It includes components such as the on-board computer, memory, bus communication, and power distribution. Careful consideration is given to data budget and processor selection to ensure efficient operation and resource management.
+
+An Example design of the whole system (credits Tohoku University Japan)
+
+![](Aspose.Words.c918ae47-991b-4809-9d7a-349487529ab8.002.jpeg)
+
+This document just provides a foundation to begin your exploration. I highly recommend hands-on learning through the practical use of simulators and development boards as an effective way to gain experience.
+
+-By [Abhishek Verma](http://abhishekverma.me)
