@@ -2,15 +2,13 @@
 layout: post
 title: "Structures"
 categories: induction
-author:
-- Auth 1
-- Auth 2
+author: Abhinas Meena
 ---
 
 [PDF link](https://drive.google.com/file/d/1zvlHo8aX637TwcfnUJRWnP-jHJfKNHI9/view?usp=drive_link)
 
 ## Table Of Content
-1. [CubeSat](#cubesat)
+1. [Introduction](#introduction)
 1. [Classification of Satellite based on size](#classification-of-satellites-based-on-size)
 1. [Types of Mission](#types-of-mission)
 1. [CubeSat Structure Design and Modelling](#cubesat-structure-design-and-modelling)
@@ -19,6 +17,7 @@ author:
 1. [Development Plan](#development-plan)
 1. [P-pod Deployer](#p-podpoly-picosatellite-orbital-deployer)
 
+## Introduction 
 As for all space missions, including cubesats, the structure is one of the main satellite subsystems. In principle, the purpose of the structural subsystem is to provide a simple and robust structure that shall survive launch loads and provide a suitable environment for the operation of all subsystems.  
 
 Furthermore, the structure mechanically supports all other spacecraft subsystems, attaches the spacecraft to the launch vehicle, and provides for ordnance-activated separation. Generally, structural design shall aim for simple load paths, simplified interfaces, and easy integration.  

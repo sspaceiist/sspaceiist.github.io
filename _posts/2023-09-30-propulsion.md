@@ -2,9 +2,7 @@
 layout: post
 title: "Propulsion Subsystem"
 categories: induction
-author:
-- Auth 1
-- Auth 2
+author: Malavika R S
 ---
 
 [PDF link](https://drive.google.com/file/d/1RdKroRezY9S3izZB88bTlXfW0JMuRFDK/view?usp=drive_link)
