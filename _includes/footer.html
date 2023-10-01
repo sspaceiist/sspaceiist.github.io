@@ -7,7 +7,7 @@
       <div class="footer-col">
         <p class="feed-subscribe">
           <a href="{{ site.feed.path | default: 'feed.xml' | absolute_url }}">
-            <img src="sspacelogo.jpg" alt="" height="40" width="40"><span>Sspace</span>
+            <img src="{{ "/sspacelogo.jpg" | relative_url }}" alt="" height="40" width="40"><span>Sspace</span>
           </a>
         </p>
       {%- if site.author %}
