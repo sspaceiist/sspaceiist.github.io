@@ -6,8 +6,7 @@ author:
 # The `>` after `description:` means to ignore line-breaks until next key.
 # If you want to omit the line-break after the end of text, use `>-` instead.
 description: >
-  This is a website made for Sspace activities and contents. Sspace is a lab located in IIST which works in latest space technology.
-
+  Sspace is a centre located in IIST for teh developemnet of small spacecraft systems technology and missions.
 # Build settings
 
 theme: minima
