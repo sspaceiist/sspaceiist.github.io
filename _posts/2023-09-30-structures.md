@@ -2,7 +2,9 @@
 layout: post
 title: "Structures"
 categories: induction
-author: Abhinas Meena
+author: 
+- Avinash Meena
+- Krrish Garg
 ---
 
 [PDF link](https://drive.google.com/file/d/1zvlHo8aX637TwcfnUJRWnP-jHJfKNHI9/view?usp=drive_link)
