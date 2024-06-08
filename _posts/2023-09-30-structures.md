@@ -117,7 +117,7 @@ The Poly Picosatellite Orbital Deployer (P-POD) is Cal Poly’s standardized Cub
 
 Once the release mechanism of the P-POD is actuated by a deployment signal sent from the LV, a set of torsion springs at the door hinge force the door open and the CubeSats are deployed by the main spring gliding on its rails and the P-PODs rails (P-POD rails are shown in Figure 3). The P-POD is made up of anodized aluminum. CubeSats slide along a series of rails during ejection into orbit. 
 
-Fig.04 Inserting the small satellite into P-POD ![](https://raw.githubusercontent.com/abhishekpythons/sspace/main/_posts/structures-pic-4.jpg)
+ ![](https://raw.githubusercontent.com/abhishekpythons/sspace/main/_posts/structures-pic-4.jpg)
 
 ## Reference
 1. Article on  Development of Innovative CubeSat Platform for Mass Production by Eyoas Ergetu Areda , Jose Rodrigo Cordova-Alarcon, Hirokazu Masui and Mengu Cho.
