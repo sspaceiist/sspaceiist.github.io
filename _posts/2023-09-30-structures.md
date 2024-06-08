@@ -71,9 +71,11 @@ All components/subsystems (including PCB’s {Printed circuit board}, Solar pane
 
 After completing the components design we doing an assembly of all components for making structure design, before doing assembly we make an assembly Plan (a processor of doing assembly means it is  decide which part will be  attached first and which later).  After completing structure, do  simulation/analysis.  
 ![](https://raw.githubusercontent.com/abhishekpythons/sspace/main/_posts/structures-pic-1.jpg)
+
 Fig01: Exploded view of the Slot- based 3U structural model 
 
 ![](https://raw.githubusercontent.com/abhishekpythons/sspace/main/_posts/structures-pic-2.jpg)
+
 Fig 02. CAD Model of 1U and 2U satellites with primary structure and PCB’s  
 
 ### 1. CubeSat Structure Materials  
