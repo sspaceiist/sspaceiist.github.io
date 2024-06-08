@@ -20,12 +20,12 @@ author: Malavika R S
 ## Introduction
 **Thrust** is the reaction force which accelerates the spacecraft independent of any other external force in a specific direction.
 
-![](Aspose.Words.cdb27b5a-33f6-4f0c-82b1-fb589a3a2f28.001.jpeg)
+![](https://raw.githubusercontent.com/abhishekpythons/sspace/main/_posts/propulsion-pic-1.jpg)
 
 - Thrust is achieved by expelling mass in the direction opposite to the required acceleration direction. The mass should be ejected at a velocity appropriate to provide the required thrust.
 - The rocket equation is used to calculate the required mass for a given delta-v (change in velocity). The same equation is used for satellites.
 
-![](Aspose.Words.cdb27b5a-33f6-4f0c-82b1-fb589a3a2f28.002.png)
+![](https://raw.githubusercontent.com/abhishekpythons/sspace/main/_posts/propulsion-pic-2.jpg)
 
 ## Basic aspects to be considered for propulsion system design
 
@@ -80,9 +80,7 @@ Some of the common propulsion system which are used for cubesat are as below:
 - Choose appropriate gas as the fuel. Consider Isp and compatibility of the fuel while choosing.
 - Calculate total mass of propellent using rocket equation
 
-![](Aspose.Words.cdb27b5a-33f6-4f0c-82b1-fb589a3a2f28.003.png)
-
-![](Aspose.Words.cdb27b5a-33f6-4f0c-82b1-fb589a3a2f28.004.png)
+![](https://raw.githubusercontent.com/abhishekpythons/sspace/main/_posts/propulsion-pic-3.jpg)
 
 Where, mdot is the mass flow rate (kg/s).
 
