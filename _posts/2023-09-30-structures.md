@@ -45,7 +45,7 @@ CubeSats provide many advantages that larger satellites cannot offer. They are r
 |Fenito |Less than 0.1Kg ||
 
 
-The small 1U CubeSat has a maximum  ![](Aspose.Words.036c8705-50d4-4043-a82a-6758a33d5015.007.jpeg)mass of 1.33 kg, and falls in the Nano- satellite category. The 3U CubeSat is  essentially three 1U CubeSats put  together, and is considered a Nano- satellite due to its mass of 4 kg. 6U up  to 27U CubeSat form factors are  microsatellites (masses range from  12.0 kg to 54.0 kg).  
+The small 1U CubeSat has a maximum mass of 1.33 kg, and falls in the Nano- satellite category. The 3U CubeSat is  essentially three 1U CubeSats put  together, and is considered a Nano- satellite due to its mass of 4 kg. 6U up  to 27U CubeSat form factors are  microsatellites (masses range from  12.0 kg to 54.0 kg).  
 
 ## Types of mission
 CubeSats can be broken up into 4 classes: E-class, C-class, S-class, and T-class. E-class satellites are educational satellites to train students, C-class satellites provide communication services, S-class satellites are science satellites that collect data, and T-class satellites test new industry technologies, so simply we can divide the mission into following  
@@ -69,12 +69,11 @@ For initial primary structure design we use 3D design/simulation software like S
 
 All components/subsystems (including PCB’s {Printed circuit board}, Solar panels which placed on external faces) are designed by Using CAD software. 
 
-After completing the components design we doing an assembly of all components for making structure design, before doing assembly we make an assembly Plan (a processor of doing assembly means it is  ![](Aspose.Words.036c8705-50d4-4043-a82a-6758a33d5015.013.png)decide which part will be  attached first and which later).  After completing structure, do  simulation/analysis.  
-
+After completing the components design we doing an assembly of all components for making structure design, before doing assembly we make an assembly Plan (a processor of doing assembly means it is  decide which part will be  attached first and which later).  After completing structure, do  simulation/analysis.  
+![](https://raw.githubusercontent.com/abhishekpythons/sspace/main/_posts/structures-pic-1.jpg)
 Fig01: Exploded view of the Slot- based 3U structural model 
 
-![](Aspose.Words.036c8705-50d4-4043-a82a-6758a33d5015.014.png) ![](Aspose.Words.036c8705-50d4-4043-a82a-6758a33d5015.015.png)
-
+![](https://raw.githubusercontent.com/abhishekpythons/sspace/main/_posts/structures-pic-2.jpg)
 Fig 02. CAD Model of 1U and 2U satellites with primary structure and PCB’s  
 
 ### 1. CubeSat Structure Materials  
@@ -103,7 +102,7 @@ A modal analysis, a quasi-static analysis, and the random vibration (PSD) analys
 The purpose of random vibration analysis is the verification of strength and structural integrity of the satellite by introducing random vibrations through the mechanical interface. This kind of analysis is best suited for subsystem/ equipment-level tests and serves for the verification of the satellite structure.
 
 ## Integration Plan
-![](Aspose.Words.036c8705-50d4-4043-a82a-6758a33d5015.025.jpeg)
+![](https://raw.githubusercontent.com/abhishekpythons/sspace/main/_posts/structures-pic-3.jpg)
 
 The mechanical and electrical systems of CubeSats can be integrated in a very dense manner to a limited mechanical envelope. 
 
@@ -116,7 +115,7 @@ The Poly Picosatellite Orbital Deployer (P-POD) is Cal Poly’s standardized Cub
 
 Once the release mechanism of the P-POD is actuated by a deployment signal sent from the LV, a set of torsion springs at the door hinge force the door open and the CubeSats are deployed by the main spring gliding on its rails and the P-PODs rails (P-POD rails are shown in Figure 3). The P-POD is made up of anodized aluminum. CubeSats slide along a series of rails during ejection into orbit. 
 
-Fig.04 Inserting the small satellite into P-POD ![](Aspose.Words.036c8705-50d4-4043-a82a-6758a33d5015.036.png)![](Aspose.Words.036c8705-50d4-4043-a82a-6758a33d5015.037.png)
+Fig.04 Inserting the small satellite into P-POD ![](https://raw.githubusercontent.com/abhishekpythons/sspace/main/_posts/structures-pic-4.jpg)
 
 ## Reference
 1. Article on  Development of Innovative CubeSat Platform for Mass Production by Eyoas Ergetu Areda , Jose Rodrigo Cordova-Alarcon, Hirokazu Masui and Mengu Cho.
