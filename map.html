@@ -295,7 +295,11 @@
                 <th>AOS Az</th>
                 <th>LOS Az</th>
                 </tr>
+                
             </thead>
+            <tbody id="table-body">
+                
+              </tbody>
         </table>
     </div>
        
@@ -406,6 +410,103 @@ L.polyline(pathCoordinates, { color: 'red' }).addTo(map); // Draw the satellite 
         document.querySelector('#datetime').textContent = currentDateTime;
       }
       setInterval(updateDateTime, 1000);
+
+      function getSatellitePasses(tleLine1, tleLine2, observerLat, observerLong) {
+        const satrec = satellite.twoline2satrec(tleLine1, tleLine2); // Convert TLE to satellite record
+        const now = new Date();
+        const endTime = new Date(now.getTime() + 3 * 24 * 60 * 60 * 1000); // 3 days from now
+        const passes = [];
+        let currentPass = null;
+
+        // Loop over each hour in the 3-day window
+        for (let time = new Date(now); time <= endTime; time.setHours(time.getHours() + 1)) {
+            try {
+                // Get satellite position for the current time
+                const positionAndVelocity = satellite.propagate(satrec, time);
+                const position = positionAndVelocity.position;
+
+                // Convert position from ECI to geodetic coordinates
+                const geodetic = satellite.eciToGeodetic(position, time);
+                const satLat = geodetic.latitude;
+                const satLon = geodetic.longitude;
+
+                // Calculate range (distance) between observer and satellite (in radians)
+                const range = satellite.greatCircleDistance(observerLat, observerLong, satLat, satLon);
+                const elevation = Math.asin(Math.sin(range) * Math.sin(observerLat - satLat)); // Elevation angle
+
+                // Calculate azimuth
+                const deltaLon = satLon - observerLong;
+                const x = Math.cos(satLat) * Math.sin(deltaLon);
+                const y = Math.cos(observerLat) * Math.sin(satLat) - Math.sin(observerLat) * Math.cos(satLat) * Math.cos(deltaLon);
+                let azimuth = Math.atan2(x, y) * 180 / Math.PI; // Azimuth in degrees
+
+                // Adjust azimuth to be between 0 and 360
+                if (azimuth < 0) {
+                    azimuth += 360;
+                }
+
+                // If the satellite is above the horizon (elevation > 0), check if it's AOS or LOS
+                if (elevation > 0) {
+                    // If no current pass, start a new one for AOS
+                    if (!currentPass) {
+                        currentPass = {
+                            aosTime: new Date(time),
+                            maxElevation: elevation,
+                            aosAzimuth: azimuth
+                        };
+                    } else {
+                        // Update max elevation during the pass
+                        if (elevation > currentPass.maxElevation) {
+                            currentPass.maxElevation = elevation;
+                        }
+                        // Update azimuth
+                        currentPass.aosAzimuth = azimuth;
+                    }
+                } else if (currentPass) {
+                    // If the satellite is below the horizon (elevation <= 0) and we have a current pass, set the LOS
+                    currentPass.losTime = new Date(time);
+                    currentPass.losAzimuth = azimuth;
+                    // Calculate duration and add the result as a tuple to the passes array
+                    const duration = (currentPass.losTime - currentPass.aosTime) / 1000; // Duration in seconds
+                    passes.push([
+                        currentPass.aosTime.toLocaleString(),  // AOS time
+                        currentPass.losTime.toLocaleString(),  // LOS time
+                        duration,                               // Duration in seconds
+                        currentPass.maxElevation,              // Max Elevation
+                        currentPass.aosAzimuth,                // AOS Azimuth
+                        currentPass.losAzimuth                 // LOS Azimuth
+                    ]);
+                    currentPass = null; // Reset for the next pass
+                }
+            } catch (error) {
+                console.error('Error calculating satellite pass details:', error.message);
+            }
+        }
+
+        console.log(passes);  // Log the passes to the console
+        return passes;        // Return the list of passes as tuples
+    }
+    function displayTuples() {
+      const tuples = getSatellitePasses(); // Get the tuples
+      const tableBody = document.getElementById("table-body"); // Get the <tbody> element
+
+      // Loop through the tuples and create a row for each one
+      tuples.forEach(function(tuple) {
+        const row = document.createElement("tr"); // Create a new row
+
+        // Loop through each value in the tuple
+        tuple.forEach(function(item) {
+          const cell = document.createElement("td"); // Create a new cell
+          cell.textContent = item; // Set the text content of the cell to the item
+          row.appendChild(cell); // Append the cell to the row
+        });
+
+        tableBody.appendChild(row); // Append the row to the table body
+      });
+    }
+
+// Call the function to display the tuples when the page loads
+displayTuples();
 </script>
 
 </html>
